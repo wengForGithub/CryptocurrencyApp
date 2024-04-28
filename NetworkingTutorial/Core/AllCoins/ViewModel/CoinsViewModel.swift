@@ -13,21 +13,35 @@ class CoinsViewModel: ObservableObject {
     @Published var price = ""
     
     init() {
-        fetchPrice()
+        fetchPrice(coin: "ethereum")
     }
     
-    func fetchPrice(){
-        let urlSting = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+    func fetchPrice(coin: String){
+        let urlSting = "https://api.coingecko.com/api/v3/simple/price?ids=\(coin)&vs_currencies=usd"
         guard let url = URL(string: urlSting) else { return }
         
-        print("Fetching price..")
+        print("Fetching price..") // 1
         
-//        this is asynchronous
+        // this is asynchronous
         URLSession.shared.dataTask(with: url) { data, response, error in
-            print("Did receive data \(data)")
+            print("Did receive data \(data)") // 3
+            guard let data = data else { return }
+            guard let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return }
+            // print("JSON \(jsonObject)")
+            // print(jsonObject)
+            guard let value = jsonObject[coin] as? [String: Double] else {
+                print("Falied to parse value")
+                return
+            }
+            // print(value)
+            guard let price = value["usd"] else { return }
+            DispatchQueue.main.async {
+                self.coin = coin.capitalized
+                self.price = "$\(price)"
+            }
         }.resume()
         
-        print("Did reach end of function")
+        print("Did reach end of function") // 2
         
     }
 }
