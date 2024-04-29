@@ -11,11 +11,14 @@ class CoinDataService {
     
     private let urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=24&locale=en"
     
-    
-    func fetchCoins(completion: @escaping([Coin]) -> Void) {
+    func fetchCoinsWithResult(completion: @escaping(Result<[Coin], Error>) -> Void) {
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
             guard let data = data else { return }
             
             guard let coins = try? JSONDecoder().decode([Coin].self, from: data) else {
@@ -23,7 +26,29 @@ class CoinDataService {
                 return
             }
             
-            completion(coins)
+            completion(.success(coins))
+            
+//            print("DEBUG: Coins decoded \(coins)")
+        }.resume()
+    }
+    
+    
+    func fetchCoins(completion: @escaping([Coin]?, Error?) -> Void) {
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            guard let data = data else { return }
+            
+            guard let coins = try? JSONDecoder().decode([Coin].self, from: data) else {
+                print("DEBUG: Failed to decoded coins")
+                return
+            }
+            
+            completion(coins, nil)
             
 //            print("DEBUG: Coins decoded \(coins)")
         }.resume()
