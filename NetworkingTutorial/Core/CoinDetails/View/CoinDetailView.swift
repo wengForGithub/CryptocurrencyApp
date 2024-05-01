@@ -14,7 +14,7 @@ struct CoinDetailView: View {
     @ObservedObject var viewModel: CoinDetailsViewModel
 //    @State private var task: Task<(), Never>? // let me cancel the task when I want to
     
-    init(coin: Coin, service: CoinDataService) {
+    init(coin: Coin, service: CoinServiceProtocol) {
         self.coin = coin
         self.viewModel = CoinDetailsViewModel(coinId: coin.id, service: service)
     }
