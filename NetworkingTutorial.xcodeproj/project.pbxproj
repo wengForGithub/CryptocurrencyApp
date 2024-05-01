@@ -13,6 +13,7 @@
 		5A299B1E2BE0BB3100F572A9 /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B1D2BE0BB3100F572A9 /* CoinDetailView.swift */; };
 		5A299B212BE0D2AF00F572A9 /* CoinDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B202BE0D2AF00F572A9 /* CoinDetails.swift */; };
 		5A299B242BE0D53000F572A9 /* CoinDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B232BE0D53000F572A9 /* CoinDetailsViewModel.swift */; };
+		5A299B282BE28A9200F572A9 /* HTTPDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B272BE28A9100F572A9 /* HTTPDataDownloader.swift */; };
 		5A3521292BDE25F3004C75F6 /* NetworkingTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3521282BDE25F3004C75F6 /* NetworkingTutorialApp.swift */; };
 		5A35212B2BDE25F3004C75F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35212A2BDE25F3004C75F6 /* ContentView.swift */; };
 		5A35212D2BDE25F4004C75F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A35212C2BDE25F4004C75F6 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		5A299B1D2BE0BB3100F572A9 /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
 		5A299B202BE0D2AF00F572A9 /* CoinDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetails.swift; sourceTree = "<group>"; };
 		5A299B232BE0D53000F572A9 /* CoinDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsViewModel.swift; sourceTree = "<group>"; };
+		5A299B272BE28A9100F572A9 /* HTTPDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataDownloader.swift; sourceTree = "<group>"; };
 		5A3521252BDE25F3004C75F6 /* NetworkingTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3521282BDE25F3004C75F6 /* NetworkingTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTutorialApp.swift; sourceTree = "<group>"; };
 		5A35212A2BDE25F3004C75F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5A299B252BE28A5200F572A9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5A299B262BE28A5800F572A9 /* API */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5A299B262BE28A5800F572A9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5A299B272BE28A9100F572A9 /* HTTPDataDownloader.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		5A35211C2BDE25F3004C75F6 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +134,7 @@
 		5A3521272BDE25F3004C75F6 /* NetworkingTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				5A299B252BE28A5200F572A9 /* Shared */,
 				5A3521362BDE261E004C75F6 /* App */,
 				5A3521372BDE2627004C75F6 /* Core */,
 				5A35212C2BDE25F4004C75F6 /* Assets.xcassets */,
@@ -250,6 +269,7 @@
 				5A299B242BE0D53000F572A9 /* CoinDetailsViewModel.swift in Sources */,
 				5A35212B2BDE25F3004C75F6 /* ContentView.swift in Sources */,
 				5A3521412BDE37F1004C75F6 /* CoinsViewModel.swift in Sources */,
+				5A299B282BE28A9200F572A9 /* HTTPDataDownloader.swift in Sources */,
 				5A299B212BE0D2AF00F572A9 /* CoinDetails.swift in Sources */,
 				5A299B112BDEF44300F572A9 /* CoinDataService.swift in Sources */,
 				5A299B162BDF7BCC00F572A9 /* Coin.swift in Sources */,
