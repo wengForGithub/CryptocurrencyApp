@@ -9,6 +9,8 @@ import Foundation
 
 class CoinDataService: HTTPDataDownloader {
     
+//    private let cache = CoinDetailsCache() // this is not working :)
+    
     func fetchCoins() async throws -> [Coin] {
         guard let endpoint = allCoinsURLString else {
             throw CoinAPIError.requestFailed(desription: "Invalid endpoint")
@@ -17,11 +19,20 @@ class CoinDataService: HTTPDataDownloader {
     }
     
     func fetchCoinDetails(id: String) async throws -> CoinDetails? {
-//        let detailsUrlString = "https://api.coingecko.com/api/v3/coins/\(id)?localization=false"
+        
+        if let cached = CoinDetailsCache.shared.get(forKey: id) {
+            print("DEBUG: Got \(id) detailed from cache")
+            return cached
+        }
+        
         guard let endpoint = coinDetailURLString(id: id) else {
             throw CoinAPIError.requestFailed(desription: "Invalid endpoint")
         }
-        return try await fetchData(as: CoinDetails.self, endpoint: endpoint)
+        
+        let details =  try await fetchData(as: CoinDetails.self, endpoint: endpoint)
+        print("DEBUG: Got \(id) detailed from API")
+        CoinDetailsCache.shared.set(details, forKey: id)
+        return details
     }
     
     private var baseUrlComponents: URLComponents {
@@ -55,11 +66,6 @@ class CoinDataService: HTTPDataDownloader {
         ]
         return components.url?.absoluteString
     }
-
-
-    
-
-    
 }
 
 // MARK: - Completion Handlers
