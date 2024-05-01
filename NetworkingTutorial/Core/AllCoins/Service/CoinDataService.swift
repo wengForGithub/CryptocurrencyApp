@@ -9,7 +9,11 @@ import Foundation
 
 class CoinDataService: HTTPDataDownloader {
     
-//    private let cache = CoinDetailsCache() // this is not working :)
+    init() {
+        print("DEBUG: Did init Service only once")
+        // this prove we only have one instance
+        // this make sure dependency injections worked
+    }
     
     func fetchCoins() async throws -> [Coin] {
         guard let endpoint = allCoinsURLString else {
