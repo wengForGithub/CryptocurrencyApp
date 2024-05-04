@@ -16,12 +16,24 @@
 		5A299B282BE28A9200F572A9 /* HTTPDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B272BE28A9100F572A9 /* HTTPDataDownloader.swift */; };
 		5A299B2E2BE2A8EE00F572A9 /* CoinDetailsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B2D2BE2A8EE00F572A9 /* CoinDetailsCache.swift */; };
 		5A299B322BE2DC7E00F572A9 /* MockCoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B312BE2DC7E00F572A9 /* MockCoinService.swift */; };
+		5A299B3A2BE6259C00F572A9 /* NetworkingTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B392BE6259C00F572A9 /* NetworkingTutorialTests.swift */; };
+		5A299B432BE6268300F572A9 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B422BE6268300F572A9 /* TestData.swift */; };
 		5A3521292BDE25F3004C75F6 /* NetworkingTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3521282BDE25F3004C75F6 /* NetworkingTutorialApp.swift */; };
 		5A35212B2BDE25F3004C75F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35212A2BDE25F3004C75F6 /* ContentView.swift */; };
 		5A35212D2BDE25F4004C75F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A35212C2BDE25F4004C75F6 /* Assets.xcassets */; };
 		5A3521302BDE25F4004C75F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A35212F2BDE25F4004C75F6 /* Preview Assets.xcassets */; };
 		5A3521412BDE37F1004C75F6 /* CoinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3521402BDE37F1004C75F6 /* CoinsViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A299B3B2BE6259C00F572A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A35211D2BDE25F3004C75F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A3521242BDE25F3004C75F6;
+			remoteInfo = NetworkingTutorial;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5A299B102BDEF44300F572A9 /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
@@ -33,6 +45,9 @@
 		5A299B272BE28A9100F572A9 /* HTTPDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataDownloader.swift; sourceTree = "<group>"; };
 		5A299B2D2BE2A8EE00F572A9 /* CoinDetailsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsCache.swift; sourceTree = "<group>"; };
 		5A299B312BE2DC7E00F572A9 /* MockCoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoinService.swift; sourceTree = "<group>"; };
+		5A299B372BE6259C00F572A9 /* NetworkingTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A299B392BE6259C00F572A9 /* NetworkingTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTutorialTests.swift; sourceTree = "<group>"; };
+		5A299B422BE6268300F572A9 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		5A3521252BDE25F3004C75F6 /* NetworkingTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3521282BDE25F3004C75F6 /* NetworkingTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTutorialApp.swift; sourceTree = "<group>"; };
 		5A35212A2BDE25F3004C75F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +57,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A299B342BE6259C00F572A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A3521222BDE25F3004C75F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,10 +151,20 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		5A299B382BE6259C00F572A9 /* NetworkingTutorialTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A299B392BE6259C00F572A9 /* NetworkingTutorialTests.swift */,
+				5A299B422BE6268300F572A9 /* TestData.swift */,
+			);
+			path = NetworkingTutorialTests;
+			sourceTree = "<group>";
+		};
 		5A35211C2BDE25F3004C75F6 = {
 			isa = PBXGroup;
 			children = (
 				5A3521272BDE25F3004C75F6 /* NetworkingTutorial */,
+				5A299B382BE6259C00F572A9 /* NetworkingTutorialTests */,
 				5A3521262BDE25F3004C75F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				5A3521252BDE25F3004C75F6 /* NetworkingTutorial.app */,
+				5A299B372BE6259C00F572A9 /* NetworkingTutorialTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +245,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A299B362BE6259C00F572A9 /* NetworkingTutorialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A299B3D2BE6259C00F572A9 /* Build configuration list for PBXNativeTarget "NetworkingTutorialTests" */;
+			buildPhases = (
+				5A299B332BE6259C00F572A9 /* Sources */,
+				5A299B342BE6259C00F572A9 /* Frameworks */,
+				5A299B352BE6259C00F572A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A299B3C2BE6259C00F572A9 /* PBXTargetDependency */,
+			);
+			name = NetworkingTutorialTests;
+			productName = NetworkingTutorialTests;
+			productReference = 5A299B372BE6259C00F572A9 /* NetworkingTutorialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5A3521242BDE25F3004C75F6 /* NetworkingTutorial */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A3521332BDE25F4004C75F6 /* Build configuration list for PBXNativeTarget "NetworkingTutorial" */;
@@ -239,6 +290,10 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					5A299B362BE6259C00F572A9 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 5A3521242BDE25F3004C75F6;
+					};
 					5A3521242BDE25F3004C75F6 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -258,11 +313,19 @@
 			projectRoot = "";
 			targets = (
 				5A3521242BDE25F3004C75F6 /* NetworkingTutorial */,
+				5A299B362BE6259C00F572A9 /* NetworkingTutorialTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A299B352BE6259C00F572A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A3521232BDE25F3004C75F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,6 +338,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A299B332BE6259C00F572A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A299B3A2BE6259C00F572A9 /* NetworkingTutorialTests.swift in Sources */,
+				5A299B432BE6268300F572A9 /* TestData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A3521212BDE25F3004C75F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,7 +368,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5A299B3C2BE6259C00F572A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A3521242BDE25F3004C75F6 /* NetworkingTutorial */;
+			targetProxy = 5A299B3B2BE6259C00F572A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5A299B3E2BE6259C00F572A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDMLRHDNGV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owenweng.NetworkingTutorialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkingTutorial.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NetworkingTutorial";
+			};
+			name = Debug;
+		};
+		5A299B3F2BE6259C00F572A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDMLRHDNGV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owenweng.NetworkingTutorialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkingTutorial.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NetworkingTutorial";
+			};
+			name = Release;
+		};
 		5A3521312BDE25F4004C75F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -477,6 +593,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A299B3D2BE6259C00F572A9 /* Build configuration list for PBXNativeTarget "NetworkingTutorialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A299B3E2BE6259C00F572A9 /* Debug */,
+				5A299B3F2BE6259C00F572A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5A3521202BDE25F3004C75F6 /* Build configuration list for PBXProject "NetworkingTutorial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
