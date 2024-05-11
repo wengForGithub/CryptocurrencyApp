@@ -17,18 +17,21 @@ class CoinsViewModel: ObservableObject {
     
     init(service: CoinServiceProtocol) {
         self.service = service
-        
-        Task { await fetchCoins() }
+        Task { 
+            await fetchCoins()
+        }
     }
     
     @MainActor
     func fetchCoins() async {
         do {
-            self.coins = try await service.fetchCoins()
+            let coins = try await service.fetchCoins()
+            self.coins.append(contentsOf: coins)
         } catch {
             guard let error = error as? CoinAPIError else { return }
             self.errorMessage = error.customDescription
         }
+
     }
 
 // this is for @EnvironmentObject
@@ -43,7 +46,7 @@ class CoinsViewModel: ObservableObject {
 //    }
     
     
-    
+// this is for Completion Handler
 //    func fetchCoinsWithCompletionHandler(){
 //        service.fetchCoinsWithResult { [weak self] result in
 //            DispatchQueue.main.async {
