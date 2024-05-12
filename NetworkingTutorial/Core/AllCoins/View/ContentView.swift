@@ -25,6 +25,14 @@ struct ContentView: View {
                             Text("\(coin.marketCapRank)")
                                 .foregroundStyle(.gray)
                             
+                            AsyncImage(url: URL(string: coin.image)) { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 32, height: 32)
+                            } placeholder: {
+                                EmptyView()
+                            }
+                            
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(coin.name)
                                     .fontWeight(.semibold)
@@ -42,6 +50,7 @@ struct ContentView: View {
                     }
                 }
             }
+            
             .navigationDestination(for: Coin.self, destination: { coin in
                 CoinDetailView(coin: coin, service: service)
             })
@@ -50,6 +59,10 @@ struct ContentView: View {
                     Text(error)
                 }
             }
+        }
+        
+        .task {
+            await viewModel.fetchCoins()
         }
     }
 }
