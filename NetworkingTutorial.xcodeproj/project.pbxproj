@@ -20,6 +20,9 @@
 		5A299B432BE6268300F572A9 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B422BE6268300F572A9 /* TestData.swift */; };
 		5A299B452BE66DC800F572A9 /* CoinsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B442BE66DC800F572A9 /* CoinsViewModelTests.swift */; };
 		5A299B472BEF3D2E00F572A9 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B422BE6268300F572A9 /* TestData.swift */; };
+		5A299B4A2BF155C600F572A9 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B492BF155C600F572A9 /* ImageLoader.swift */; };
+		5A299B4C2BF155D300F572A9 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B4B2BF155D300F572A9 /* ImageCache.swift */; };
+		5A299B4E2BF155DE00F572A9 /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A299B4D2BF155DE00F572A9 /* CoinImageView.swift */; };
 		5A3521292BDE25F3004C75F6 /* NetworkingTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3521282BDE25F3004C75F6 /* NetworkingTutorialApp.swift */; };
 		5A35212B2BDE25F3004C75F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35212A2BDE25F3004C75F6 /* ContentView.swift */; };
 		5A35212D2BDE25F4004C75F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A35212C2BDE25F4004C75F6 /* Assets.xcassets */; };
@@ -51,6 +54,9 @@
 		5A299B392BE6259C00F572A9 /* NetworkingTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTutorialTests.swift; sourceTree = "<group>"; };
 		5A299B422BE6268300F572A9 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		5A299B442BE66DC800F572A9 /* CoinsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewModelTests.swift; sourceTree = "<group>"; };
+		5A299B492BF155C600F572A9 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		5A299B4B2BF155D300F572A9 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		5A299B4D2BF155DE00F572A9 /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		5A3521252BDE25F3004C75F6 /* NetworkingTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3521282BDE25F3004C75F6 /* NetworkingTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTutorialApp.swift; sourceTree = "<group>"; };
 		5A35212A2BDE25F3004C75F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		5A299B252BE28A5200F572A9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5A299B482BF155B800F572A9 /* Images */,
 				5A299B262BE28A5800F572A9 /* API */,
 			);
 			path = Shared;
@@ -164,6 +171,16 @@
 			path = NetworkingTutorialTests;
 			sourceTree = "<group>";
 		};
+		5A299B482BF155B800F572A9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5A299B492BF155C600F572A9 /* ImageLoader.swift */,
+				5A299B4B2BF155D300F572A9 /* ImageCache.swift */,
+				5A299B4D2BF155DE00F572A9 /* CoinImageView.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		5A35211C2BDE25F3004C75F6 = {
 			isa = PBXGroup;
 			children = (
@@ -185,10 +202,10 @@
 		5A3521272BDE25F3004C75F6 /* NetworkingTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				5A299B252BE28A5200F572A9 /* Shared */,
 				5A3521362BDE261E004C75F6 /* App */,
 				5A3521372BDE2627004C75F6 /* Core */,
 				5A35212C2BDE25F4004C75F6 /* Assets.xcassets */,
+				5A299B252BE28A5200F572A9 /* Shared */,
 				5A35212E2BDE25F4004C75F6 /* Preview Content */,
 			);
 			path = NetworkingTutorial;
@@ -356,9 +373,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A299B4C2BF155D300F572A9 /* ImageCache.swift in Sources */,
+				5A299B4A2BF155C600F572A9 /* ImageLoader.swift in Sources */,
 				5A299B322BE2DC7E00F572A9 /* MockCoinService.swift in Sources */,
 				5A299B182BDF919200F572A9 /* CoinAPIError.swift in Sources */,
 				5A299B2E2BE2A8EE00F572A9 /* CoinDetailsCache.swift in Sources */,
+				5A299B4E2BF155DE00F572A9 /* CoinImageView.swift in Sources */,
 				5A299B242BE0D53000F572A9 /* CoinDetailsViewModel.swift in Sources */,
 				5A299B472BEF3D2E00F572A9 /* TestData.swift in Sources */,
 				5A35212B2BDE25F3004C75F6 /* ContentView.swift in Sources */,
